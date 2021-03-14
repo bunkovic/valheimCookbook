@@ -1,7 +1,14 @@
 class Ingredient{
   final int quantity;
-  final CraftingMaterial material;
+  final Item item;
+  Ingredient(this.quantity, this.item);
 }
-class CraftingMaterial{
+abstract class Item{
+  final int id = -1;
+  final double weight = 0.0;
+  final int stackSize = 1;
+}
 
+abstract class Craftable implements Item{
+  final List<Ingredient> ingredients = List.empty();
 }
